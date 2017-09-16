@@ -1,5 +1,6 @@
-/*
-* */
+/**
+ * Created by Chengxs on 2017/9/16.
+ */
 const gulp = require('gulp')
 const gulpUtil = require('gulp-util')
 const webpack = require('webpack')
@@ -14,7 +15,11 @@ gulp.task('build-dev',["webpack:dev-server"], function () {
 
 gulp.task('webpack:dev-server', function () {
     let compiler = webpack(webpackDevConfig)
-    new WebpackDevServer(compiler).listen(8888, 'localhost', function (err) {
+    webpackDevConfig.entry.main.unshift("webpack-dev-server/client?http://localhost:8888/")
+    new WebpackDevServer(compiler,{
+        hot: true,
+        contentBase: './dist'
+    }).listen(8888, 'localhost', function (err) {
         if (err){
             throw new gulpUtil.PluginError('webpack-dev-server', err)
         }
