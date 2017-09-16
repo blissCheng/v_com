@@ -8,6 +8,6 @@ const routers = {
 }
 
 const router = new VueRouter({
-    routes
+    routers
 })
 export default router
