@@ -38,7 +38,6 @@ module.exports = {
                         options: {
                             limit: 10240,
                             name: '[path][name].[ext]',
-                            publicPath: '../asset/img/'
                         }
                     }
                 ]
@@ -78,7 +77,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'index.html'),
+            template: path.join(__dirname, '../index.html'),
             inject: 'body'
         }),
         new webpack.HotModuleReplacementPlugin(),
