@@ -1,3 +1,6 @@
+/**
+ * Created by Chengxs on 2017/9/16.
+ */
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -38,7 +41,6 @@ module.exports = {
                         options: {
                             limit: 10240,
                             name: '[path][name].[ext]',
-                            publicPath: '../asset/img/'
                         }
                     }
                 ]
@@ -78,7 +80,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'index.html'),
+            template: path.join(__dirname, '../index.html'),
             inject: 'body'
         }),
         new webpack.HotModuleReplacementPlugin(),
