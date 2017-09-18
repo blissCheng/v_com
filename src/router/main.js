@@ -3,11 +3,11 @@ import Vue from 'vue'
 
 Vue.use(VueRouter)
 
-const routers = {
+const routes = [
 
-}
+]
 
-const router = new VueRouter({
-    routers
+const route = new VueRouter({
+    routes
 })
-export default router
+export default route

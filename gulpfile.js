@@ -32,17 +32,12 @@ gulp.task('dist-html', ['dist-webpack'], function () {
         .pipe(gulp.dest('./dist'))
 })
 
-gulp.task('dist-img', function () {
-    return gulp.src('./asset/img/*.*')
-        .pipe(gulp.dest('./dist/img'))
-})
-
 gulp.task('dist-webpack',[], function () {
     return gulp.src('./src/*.js')
         .pipe(webpackStream(webpackDistConfig, webpack))
         .pipe(gulp.dest('./dist'))
 })
 
-gulp.task('build-dist',['dist-img','dist-html'], function () {
+gulp.task('build-dist',['dist-html'], function () {
     
 })
