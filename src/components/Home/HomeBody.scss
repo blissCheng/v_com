@@ -1,0 +1,108 @@
+$child-height: 30px;
+$large-x: 12px;
+$large: 10px;
+.home-body{
+  ul{
+    li{
+      padding: 10px;
+      position: relative;
+      border-top: 1px solid #f0f0f0;
+      &:hover{
+        background: #f0f0f0;
+      }
+      img{
+        width: 30px;
+        height: $child-height;
+        float: left;
+      }
+      .count{
+        display: inline-block;
+        height: $child-height;
+        line-height: $child-height;
+        width: 80px;
+        text-align: center;
+        span{
+          &:first-child{
+            color: #9e78c0;
+            font-size: 14px;
+          }
+          &:nth-child(2){
+            font-size: $large;
+            color: #b4b4b4;
+          }
+        }
+      }
+      .tag{
+        font-size: $large-x;
+        display: inline-block;
+        text-align: center;
+        padding: 2px 4px;
+        border-radius: 4px;
+        background: #e5e5e5;
+        color: #999;
+      }
+      .top{
+        background: #369219;
+        color: #ffffff;
+      }
+      .title{
+        max-width: 60%;
+        height:$child-height;
+        line-height: $child-height;
+        display: inline-block;
+        vertical-align: bottom;
+        overflow: hidden;
+        white-space:nowrap;
+        text-overflow:ellipsis;
+        cursor: pointer;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+      .topTitle{
+        color: #888;
+      }
+      .create-time{
+        float: right;
+        min-width: 50px;
+        text-align: right;
+        color: #778087;
+        font-size: $large;
+        height: $child-height;
+        line-height: $child-height;
+      }
+    }
+  }
+}
+@media screen and (max-width: 960px){
+  .home-body{
+    ul{
+      li{
+        .title{
+          font-size: $large-x;
+          line-height: $large-x;
+        }
+        .tag {
+          vertical-align: top;
+          margin-left: 5px;
+        }
+        .count{
+          position: absolute;
+          bottom: 0;
+          left: 80px;
+          text-align: left;
+          span{
+            &:first-child{
+              font-size: $large;
+            }
+          }
+        }
+        .create-time{
+          position: absolute;
+          bottom: 0;
+          right: 8px;
+        }
+      }
+    }
+  }
+}

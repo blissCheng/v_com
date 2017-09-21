@@ -25,8 +25,10 @@
 <style scoped>
     .home-header{
         width: 100%;
-        padding: 10px;
+        padding: 10px 0;
         background: #f6f6f6;
+        overflow: hidden;
+        border-radius: 5px;
     }
     .home-header>ul{
         float: left;
