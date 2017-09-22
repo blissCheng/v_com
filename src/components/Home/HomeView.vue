@@ -2,6 +2,7 @@
     <div class="home-page">
         <HomeHeader @changeState="tabTransform"/>
         <HomeBody :source="topics"/>
+        <Page/>
     </div>
 </template>
 <style scoped>
@@ -21,6 +22,7 @@
 <script>
     import HomeHeader from './HomeHeader.vue'
     import HomeBody from './HomeBody.vue'
+    import Page from '../page/page.vue'
     import config from '../../config'
     export default{
         data(){
@@ -36,6 +38,7 @@
         components:{
             "HomeHeader": HomeHeader,
             "HomeBody": HomeBody,
+            "Page": Page
         },
         methods:{
             loadTopics(type, pageno = '1'){
