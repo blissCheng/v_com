@@ -13,3 +13,48 @@
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
+
+$border-color: #ddd;
+
+#page{
+  ul{
+    height: 28px;
+    float: left;
+    border-radius: 4px;
+    border: 1px solid $border-color;
+    li{
+      float: left;
+      padding: 5px 10px;
+      cursor: pointer;
+      color: #778087;
+      border-right: 1px solid $border-color;
+      &:last-child{
+        border-right: none;
+      }
+    }
+    .active{
+      color: #369219;
+    }
+  }
+  .quick-jumper{
+    span{
+      margin: 0 15px 0 30px;
+    }
+    input{
+      width: 50px;
+      height: 26px;
+      border-radius: 4px;
+      outline-color: #108ee9;
+      border: 1px solid $border-color;
+      transition: all 0.5s;
+      &:hover{
+        border: 1px solid #108ee9;
+        box-shadow: 0 0 10px #ccc inset;
+      }
+      &:active{
+        border: 1px solid #108ee9;
+        box-shadow: 0 0 10px #ccc inset;
+      }
+    }
+  }
+}

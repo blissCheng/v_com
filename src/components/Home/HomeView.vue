@@ -2,7 +2,13 @@
     <div class="home-page">
         <HomeHeader @changeState="tabTransform"/>
         <HomeBody :source="topics"/>
-        <Page/>
+        <Page
+                :total="total"
+                :pageSize="26"
+                :showQuickJumper = "true"
+                :defaultCurrent="current"
+                @onChange = "onChange"
+        />
     </div>
 </template>
 <style scoped>
@@ -28,7 +34,9 @@
         data(){
             return{
                 topics: [],
-                tab: config.tab[0]
+                tab: config.tab[0],
+                total: 1000,
+                current: 1
             }
         },
         mounted(){
@@ -41,7 +49,8 @@
             "Page": Page
         },
         methods:{
-            loadTopics(type, pageno = '1'){
+            loadTopics(type, pageno = 1){
+
                 fetch(`${config.host}topics?limit=${config.limit}&page=${pageno}&tab=${type}`)
                     .then((response) => {
                         return response.json()
@@ -55,7 +64,12 @@
             },
             tabTransform(val){
                 this.tab = val
+                this.current = 1
                 this.loadTopics(val)
+            },
+            onChange(page){
+                this.current = page
+                this.loadTopics(this.tab,page)
             }
         }
     }
